@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <title>Dojos</title>
+</head>
+<body>
+    <div class="container d-flex gap-3">
+        <div class="left col-6 bg-secondary form-group">
+            <h2 class="text text-primary">New Dojo</h2>
+            <form action="/dojos/new" method="post">
+                <input type="hidden" name="id" value="{{dojo.id}}">
+                <label for="name" class="text text-light">Name:</label>
+                <input type="text" name="name">
+                <input type="submit" value="Create" class="btn btn-primary mt-3">
+            </form>
+        </div>
+        <div class="right col-6 bg-secondary form-group">
+            <h2 class="text text-primary">All Dojos</h2>
+            <ul>
+                {% for dojo in dojo %}
+                <li>
+                    <a href="/dojos/{{dojo.id}}" class="text text-light">{{dojo.name}}</a>
+                </li>
+                {% endfor %}
+            </ul>
+            <a href="/ninja/new" class="text text-light">Add Ninja</a>
+        </div>
+    </div>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>
