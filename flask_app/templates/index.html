@@ -9,17 +9,17 @@
     <title>Dojos</title>
 </head>
 <body>
-    <div class="container d-flex gap-3">
-        <div class="left col-6 bg-secondary form-group">
+    <div class="container d-flex gap-3 mt-3">
+        <div class="left col-6 bg-secondary form-group p-3">
             <h2 class="text text-primary">New Dojo</h2>
             <form action="/dojos/new" method="post">
                 <input type="hidden" name="id" value="{{dojo.id}}">
                 <label for="name" class="text text-light">Name:</label>
-                <input type="text" name="name">
+                <input type="text" name="name" class="form-control">
                 <input type="submit" value="Create" class="btn btn-primary mt-3">
             </form>
         </div>
-        <div class="right col-6 bg-secondary form-group">
+        <div class="right col-6 bg-secondary form-group p-3">
             <h2 class="text text-primary">All Dojos</h2>
             <ul>
                 {% for dojo in dojo %}
